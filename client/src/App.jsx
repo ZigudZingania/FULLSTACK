@@ -7,7 +7,7 @@ function App() {
 
   useEffect(() => {
     axios
-      .get("/api/data")
+      .get("https://fullstack-backend-black.vercel.app/api/data")
       .then((res) => {
         console.log(res.data);
         setData(res.data);
