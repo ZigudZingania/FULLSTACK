@@ -5,17 +5,33 @@ import axios from "axios";
 function App() {
   const [data, setData] = useState([]);
 
+  // FOR DEVELOPMENT PURPOSE
+
+  // useEffect(() => {
+  //   axios
+  //     .get("/api/data")
+  //     .then((res) => {
+  //       console.log(res.data);
+  //       setData(res.data);
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // }, []);
+
+  // FOR DEPLOYMENT PURPOSE
+
   useEffect(() => {
-    axios
-      .get("/api/data")
-      .then((res) => {
-        console.log(res.data);
-        setData(res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
+      axios
+        .get("https://fullstack-backend-black.vercel.app/api/data")
+        .then((res) => {
+          console.log(res.data);
+          setData(res.data);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    });
 
   return (
     <>
