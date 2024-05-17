@@ -56,7 +56,7 @@ function App() {
   
   useEffect(() => {
     axios
-      .get("https://fullstack-backend-black.vercel.app/api/data")
+      .get("https://fullstack-server-flame.vercel.app/api/data")
       .then((res) => {
         console.log(res.data);
         setData(res.data);
@@ -71,7 +71,7 @@ function App() {
     try {
       await axios
         .post(
-          "https://fullstack-backend-black.vercel.app/add",
+          "https://fullstack-server-flame.vercel.app/add",
           { id: id, p_name: Pname || "Zaffa", age: Number(age) || 69 }
           // Guess you don't need these lines of code.
           // , {
