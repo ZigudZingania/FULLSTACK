@@ -58,7 +58,7 @@ function App() {
     axios
       .get("https://fullstack-server-flame.vercel.app/api/data")
       .then((res) => {
-        console.log(res.data);
+        console.log(res);
         setData(res.data);
       })
       .catch((err) => {
